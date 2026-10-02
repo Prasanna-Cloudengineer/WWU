@@ -1,0 +1,26 @@
+<section id="technologies" class="section section-dark tech">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">Technology Ecosystem</p>
+      <h2 class="section-heading section-heading--wide">Technology We Work With</h2>
+      <p class="section-intro__lede">Modern tools. Proven technologies. Practical solutions.</p>
+    </div>
+
+    <div class="tech__hub" appReveal>
+      <span class="tech__hub-label">WorkWithUs<br />Technology Stack</span>
+    </div>
+
+    <div class="tech__grid">
+      @for (cat of categories; track cat.category; let i = $index) {
+        <div class="tech-card" [appReveal]="(i % 4) * 80">
+          <h3 class="tech-card__title">{{ cat.category }}</h3>
+          <ul class="tech-card__chips">
+            @for (item of cat.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

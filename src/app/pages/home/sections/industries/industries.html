@@ -1,0 +1,22 @@
+<section class="section industries">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">Industries</p>
+      <h2 class="section-heading section-heading--wide">Industries We Serve</h2>
+      <p class="section-intro__lede">
+        We work with businesses across a range of industries, adapting our approach
+        to each domain's needs.
+      </p>
+    </div>
+
+    <div class="industries__grid">
+      @for (industry of industries; track industry.title; let i = $index) {
+        <div class="industry-card" [appReveal]="(i % 3) * 80">
+          <span class="industry-card__icon"><app-icon name="briefcase" [size]="20" /></span>
+          <h3>{{ industry.title }}</h3>
+          <p>{{ industry.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

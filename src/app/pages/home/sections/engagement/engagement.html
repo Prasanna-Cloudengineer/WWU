@@ -1,0 +1,32 @@
+<section class="section section-light engagement">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">Engagement Models</p>
+      <h2 class="section-heading section-heading--wide">Flexible Ways to Work With Us</h2>
+    </div>
+
+    <div class="engagement__grid">
+      @for (model of models; track model.title; let i = $index) {
+        <div class="engagement-card" [appReveal]="i * 100">
+          <h3>{{ model.title }}</h3>
+          <p>{{ model.description }}</p>
+          <ul>
+            @for (point of model.points; track point) {
+              <li>
+                <app-icon name="check" [size]="15" />
+                <span>{{ point }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <div class="engagement__cta" appReveal>
+      <a href="#contact" class="btn btn-primary">
+        Discuss Your Requirement
+        <app-icon name="arrow-right" [size]="18" />
+      </a>
+    </div>
+  </div>
+</section>

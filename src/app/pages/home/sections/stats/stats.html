@@ -1,0 +1,16 @@
+<section class="stats section-dark section--tight">
+  <div class="container stats__grid">
+    @for (stat of stats; track stat.label; let i = $index) {
+      <div class="stats__item" [appReveal]="i * 90">
+        @if (stat.numeric !== null) {
+          <span class="stats__value">
+            <span [appCountUp]="stat.numeric" [suffix]="stat.suffix">0</span>
+          </span>
+        } @else {
+          <span class="stats__value stats__value--text">{{ stat.value }}</span>
+        }
+        <span class="stats__label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>

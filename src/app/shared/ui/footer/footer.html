@@ -1,0 +1,57 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a href="#home" class="site-footer__logo">Work<span>WithUs</span></a>
+      <p>Technology That Works With You.</p>
+
+      <ul class="site-footer__social" aria-label="Social media links">
+        <li><a href="#" aria-label="LinkedIn (placeholder)"><app-icon name="linkedin" [size]="18" /></a></li>
+        <li><a href="#" aria-label="Facebook (placeholder)"><app-icon name="facebook" [size]="18" /></a></li>
+        <li><a href="#" aria-label="Instagram (placeholder)"><app-icon name="instagram" [size]="18" /></a></li>
+        <li><a href="#" aria-label="X (placeholder)"><app-icon name="x-twitter" [size]="18" /></a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Quick Links</h3>
+      <ul>
+        @for (link of quickLinks; track link.fragment) {
+          <li><a [href]="'#' + link.fragment">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Services</h3>
+      <ul>
+        @for (service of serviceLinks; track service) {
+          <li><a href="#services">{{ service }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Contact</h3>
+      <ul class="site-footer__contact">
+        <li>
+          <app-icon name="mail" [size]="16" />
+          <span>hello&#64;workwithus.example <em>(placeholder)</em></span>
+        </li>
+        <li>
+          <app-icon name="phone" [size]="16" />
+          <span>+1 (000) 000-0000 <em>(placeholder)</em></span>
+        </li>
+        <li>
+          <app-icon name="pin" [size]="16" />
+          <span>City, Country <em>(placeholder)</em></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="container">
+      <p>&copy; {{ year }} WorkWithUs. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>

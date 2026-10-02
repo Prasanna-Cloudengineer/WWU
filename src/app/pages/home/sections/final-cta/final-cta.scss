@@ -1,0 +1,51 @@
+.final-cta {
+  position: relative;
+  padding-block: clamp(72px, 10vw, 140px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.final-cta__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(36, 150, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(22, 119, 255, 0.22), transparent 45%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-cta__glow {
+    animation: none;
+  }
+}
+
+.final-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.final-cta__heading {
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--color-white);
+}
+
+.final-cta__lede {
+  margin-top: 18px;
+  font-size: 18px;
+}
+
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}

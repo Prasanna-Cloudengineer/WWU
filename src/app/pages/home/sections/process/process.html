@@ -1,0 +1,20 @@
+<section id="process" class="section section-light process">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">How We Work</p>
+      <h2 class="section-heading section-heading--wide">A Clear, Proven Delivery Process</h2>
+    </div>
+
+    <div class="process__track">
+      @for (step of steps; track step.number; let i = $index) {
+        <div class="process__step" [appReveal]="i * 140">
+          <div class="process__marker">
+            <span>{{ step.number }}</span>
+          </div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

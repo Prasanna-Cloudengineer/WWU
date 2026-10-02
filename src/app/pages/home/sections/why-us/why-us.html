@@ -1,0 +1,32 @@
+<section id="why-us" class="section why-us">
+  <div class="container why-us__grid">
+    <div class="why-us__intro" appReveal>
+      <p class="eyebrow">Why WorkWithUs</p>
+      <h2 class="section-heading">Why Businesses Work With Us</h2>
+      <p class="section-intro__lede">
+        A decade of experience, a full-service technology offering, and engagement
+        models that adapt to how you want to work.
+      </p>
+    </div>
+
+    <ul class="why-us__list" [appReveal]="120">
+      @for (reason of reasons; track reason.title; let i = $index) {
+        <li
+          class="why-us__item"
+          [class.is-active]="activeIndex() === i"
+          (mouseenter)="setActive(i)"
+          (focus)="setActive(i)"
+          (click)="setActive(i)"
+          tabindex="0"
+        >
+          <span class="why-us__index">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <div class="why-us__text">
+            <h3>{{ reason.title }}</h3>
+            <p class="why-us__desc">{{ reason.description }}</p>
+          </div>
+          <app-icon name="check" [size]="18" class="why-us__check" />
+        </li>
+      }
+    </ul>
+  </div>
+</section>

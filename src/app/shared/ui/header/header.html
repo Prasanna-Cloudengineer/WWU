@@ -1,0 +1,43 @@
+<header class="site-header" [class.is-scrolled]="isScrolled()">
+  <div class="container site-header__inner">
+    <a href="#home" class="site-header__logo" (click)="closeMenu()">
+      Work<span>WithUs</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul>
+        @for (link of navLinks; track link.fragment) {
+          <li>
+            <a [href]="'#' + link.fragment">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary site-header__cta">Let's Talk</a>
+
+    <button
+      type="button"
+      class="site-header__toggle"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobile-nav"
+      [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="isMenuOpen() ? 'close' : 'menu'" [size]="22" />
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" [class.is-open]="isMenuOpen()">
+    <nav aria-label="Mobile">
+      <ul>
+        @for (link of navLinks; track link.fragment) {
+          <li>
+            <a [href]="'#' + link.fragment" (click)="closeMenu()">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary" (click)="closeMenu()">Let's Talk</a>
+  </div>
+</header>

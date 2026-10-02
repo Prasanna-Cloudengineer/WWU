@@ -1,0 +1,22 @@
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">Testimonials</p>
+      <h2 class="section-heading section-heading--wide">What Clients Say</h2>
+      <p class="section-intro__lede">Real client testimonials will be added here.</p>
+    </div>
+
+    <div class="testimonials__grid">
+      @for (item of testimonials; track $index; let i = $index) {
+        <blockquote class="testimonial-card" [appReveal]="i * 100">
+          <app-icon name="quote" [size]="26" class="testimonial-card__quote" />
+          <p class="testimonial-card__text">{{ item.quote }}</p>
+          <footer>
+            <span class="testimonial-card__name">{{ item.name }}</span>
+            <span class="testimonial-card__role">{{ item.role }}</span>
+          </footer>
+        </blockquote>
+      }
+    </div>
+  </div>
+</section>

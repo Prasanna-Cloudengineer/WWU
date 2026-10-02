@@ -1,0 +1,36 @@
+<section id="services" class="section section-light services">
+  <div class="container">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">What We Do</p>
+      <h2 class="section-heading section-heading--wide">
+        End-to-end IT services built for your business
+      </h2>
+      <p class="section-intro__lede">
+        From building new products to supporting what you already have, our services
+        cover the full technology lifecycle.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      @for (service of services; track service.number; let i = $index) {
+        <article class="service-card" [class.service-card--wide]="i === 0" [appReveal]="(i % 3) * 90">
+          <div class="service-card__top">
+            <span class="service-card__number">{{ service.number }}</span>
+            <span class="service-card__icon"><app-icon [name]="service.icon" [size]="24" /></span>
+          </div>
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          <ul class="service-card__points">
+            @for (point of service.points.slice(0, 4); track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+          <a href="#contact" class="service-card__link">
+            Explore Service
+            <app-icon name="arrow-right" [size]="16" />
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

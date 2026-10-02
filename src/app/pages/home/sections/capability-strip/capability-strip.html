@@ -1,0 +1,14 @@
+<section class="strip" aria-label="Our capabilities">
+  <div class="strip__track">
+    <ul class="strip__list">
+      @for (item of items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    <ul class="strip__list" aria-hidden="true">
+      @for (item of items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>

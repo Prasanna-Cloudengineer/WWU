@@ -1,0 +1,29 @@
+<section id="about" class="section about">
+  <div class="container about__grid">
+    <div class="about__figure" appReveal>
+      <div class="about__number-card">
+        <span class="about__number">10<small>+</small></span>
+        <span class="about__number-label">Years of Experience</span>
+      </div>
+      <ul class="about__badges">
+        @for (item of capabilities; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="about__content" [appReveal]="120">
+      <p class="eyebrow">About WorkWithUs</p>
+      <h2 class="section-heading">Technology Expertise. Business Understanding.</h2>
+      <p class="about__lede">
+        With 10+ years of experience across software development, mobile applications,
+        cloud infrastructure, DevOps, testing and technical support, WorkWithUs helps
+        businesses turn technology requirements into reliable digital solutions.
+      </p>
+      <a href="#services" class="btn btn-secondary">
+        More About WorkWithUs
+        <app-icon name="arrow-right" [size]="18" />
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="section section-light dev-support">
+  <div class="container dev-support__grid">
+    <div class="dev-support__content" appReveal>
+      <p class="eyebrow">Development Support</p>
+      <h2 class="section-heading section-heading--wide">
+        Already Have a Product? We Can Help You Build It Further.
+      </h2>
+      <p class="section-intro__lede">
+        WorkWithUs supports existing teams and applications &mdash; not just new
+        builds. Whatever stage your product is at, we can help move it forward.
+      </p>
+      <a href="#contact" class="btn btn-primary">
+        Talk to a Technical Expert
+        <app-icon name="arrow-right" [size]="18" />
+      </a>
+    </div>
+
+    <ul class="dev-support__list" [appReveal]="120">
+      @for (item of items; track item) {
+        <li>
+          <app-icon name="check" [size]="16" />
+          <span>{{ item }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

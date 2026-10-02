@@ -1,0 +1,36 @@
+<section id="faq" class="section section-light faq">
+  <div class="container faq__inner">
+    <div class="section-intro" appReveal>
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq__list" [appReveal]="120">
+      @for (item of faqs; track item.question; let i = $index) {
+        <div class="faq-item" [class.is-open]="openIndex() === i">
+          <h3>
+            <button
+              type="button"
+              class="faq-item__trigger"
+              [attr.aria-expanded]="openIndex() === i"
+              [attr.aria-controls]="'faq-panel-' + i"
+              [id]="'faq-trigger-' + i"
+              (click)="toggle(i)"
+            >
+              <span>{{ item.question }}</span>
+              <app-icon name="chevron-down" [size]="20" class="faq-item__icon" />
+            </button>
+          </h3>
+          <div
+            class="faq-item__panel"
+            role="region"
+            [id]="'faq-panel-' + i"
+            [attr.aria-labelledby]="'faq-trigger-' + i"
+          >
+            <p>{{ item.answer }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
