@@ -28,14 +28,34 @@
 }
 
 .site-header__logo {
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: clamp(17px, 4.6vw, 22px);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--color-white);
+  white-space: nowrap;
 
-  span {
+  .site-header__logo-text span {
     color: var(--color-bright-blue);
   }
+}
+
+.site-header__logo-img {
+  height: clamp(36px, 9vw, 52px);
+  width: auto;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 12px;
+  mix-blend-mode: screen;
+  transition: height var(--transition-base);
+}
+
+.site-header.is-scrolled .site-header__logo-img {
+  height: clamp(32px, 8vw, 42px);
 }
 
 .site-header__nav {
